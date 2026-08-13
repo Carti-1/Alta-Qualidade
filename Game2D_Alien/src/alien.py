@@ -1,11 +1,13 @@
 import pygame
 from pygame.sprite import Sprite
+from pygame.surface import Surface
+from settings import Settings
 
 
 class Alien(Sprite):
     """Gerencia os alienígenas."""
 
-    def __init__(self, alien_invasion_screen, alien_invasion_settings):
+    def __init__(self, alien_invasion_screen: Surface, alien_invasion_settings: Settings):
         """Inicializa o alienígena e define sua posição inicial."""
         super().__init__()  # Chama o construtor da classe Sprite para garantir que a classe Alien seja inicializada corretamente como um sprite do Pygame
         self.screen = alien_invasion_screen

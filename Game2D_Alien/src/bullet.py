@@ -1,5 +1,8 @@
 import pygame
 from pygame.sprite import Sprite
+from pygame.surface import Surface
+from settings import Settings
+from ship import Ship
 
 
 # Nesse momento é utilizado o conceito de HERANÇA de Orientação a Objetos, onde a classe Bullet herda os atributos e métodos da classe Sprite, que é uma classe do Pygame usada para representar objetos visuais no jogo.
@@ -8,7 +11,7 @@ class Bullet(Sprite):
     """Gerencia os projéteis disparados pela nave."""
 
     def __init__(
-        self, alien_invasion_screen, alien_invasion_settings, alien_invasion_ship
+        self, alien_invasion_screen: Surface, alien_invasion_settings: Settings, alien_invasion_ship: Ship
     ):
         """Cria um objeto para o projétil na posição atual da nave."""
         super().__init__()  # Chama o construtor da classe Sprite para garantir que a classe Bullet seja inicializada corretamente como um sprite do Pygame
