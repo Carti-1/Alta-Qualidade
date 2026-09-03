@@ -4,34 +4,45 @@ from alien import Alien
 
 class FleetManager:
 
-    def __init__(self, screen, settings, ship) -> None:
+    def __init__(self, screen, settings, ship, alien_class = Alien) -> None:
         self.screen = screen
         self.settings = settings
         self.ship = ship
+        self.alien_class = alien_class
         self.aliens = pygame.sprite.Group()
+
+    def _create_alien(self, alien_number: int, row_number: int, alien_width: int, alien_height: int) -> None:
+        """Cria um alienígena e o posiciona na linha especificada.[cite: 1]"""
+        alien = Alien(self.screen, self.settings)
+        alien_x = alien_width + 2 * alien_width * alien_number
+        alien.rect.x = alien_x
+        alien_height = alien.rect.height
+        alien_y = alien_height + 2 * alien_height * row_number
+        alien.rect.y = alien_y
+        self.aliens.add(alien)
     
 
     def create_fleet(self) -> None:
         """Cria a frota de alienígenas.[cite: 1]"""
-        alien = Alien(self.screen, self.settings)
+        # Cria uma instância de Alien para obter suas dimensões
+        # O espaçamento entre os alienígenas é igual à largura de um alienígena
+        alien = self.alien_class(self.screen, self.settings)
         alien_width = alien.rect.width
         alien_height = alien.rect.height
+
         available_space_x = self.settings.screen_width - (2 * alien_width)
         number_aliens_x = available_space_x // (2 * alien_width)
+
         ship_height = self.ship.rect.height
         available_space_y = (
             self.settings.screen_height - (3 * alien_height) - ship_height
         )
+
         number_rows = available_space_y // (2 * alien_height)
 
         for row_number in range(number_rows):
             for alien_number in range(number_aliens_x):
-                alien = Alien(self.screen, self.settings)
-                alien_x = alien_width + 2 * alien_width * alien_number
-                alien.rect.x = alien_x
-                alien_y = alien_height + 2 * alien_height * row_number
-                alien.rect.y = alien_y
-                self.aliens.add(alien)
+                self._create_alien(alien_number, row_number, alien_width, alien_height)
 
     def _update_aliens(self) -> None:
         """Verifica se a frota de alienígenas está em uma borda, então atualiza as posições de todos os alienígenas na frota.[cite: 1]"""
