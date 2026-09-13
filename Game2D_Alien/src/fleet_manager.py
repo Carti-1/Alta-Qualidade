@@ -41,7 +41,9 @@ class FleetManager:
         number_rows = available_space_y // (2 * alien_height)
 
         for row_number in range(number_rows):
+            # Cria uma linha de alienígenas
             for alien_number in range(number_aliens_x):
+                # Cria um alienígena e o posiciona na linha
                 self._create_alien(alien_number, row_number, alien_width, alien_height)
 
     def _update_aliens(self) -> None:
