@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 
 # Projeto específico
 Mercado/
 htmlcov/
 HTMLCOV/
-=======
-#Pasta Mercado
-Mercado/ 
->>>>>>> develop
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
