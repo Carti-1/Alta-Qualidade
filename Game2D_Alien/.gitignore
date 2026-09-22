@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 
 # Projeto específico
 Mercado/
 htmlcov/
 HTMLCOV/
+=======
+#Pasta Mercado
+Mercado/ 
+>>>>>>> develop
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -44,6 +49,7 @@ pip-delete-this-directory.txt
 
 # Unit test / coverage reports
 htmlcov/
+HTMLCOV/
 .tox/
 .nox/
 .coverage
