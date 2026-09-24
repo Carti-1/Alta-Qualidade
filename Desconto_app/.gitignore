@@ -28,6 +28,15 @@ dist/
 .idea/
 *.code-workspace
 
+# Environment variables / secrets
+.env
+.env.*
+
+# Local databases
+*.sqlite3
+*.db
+*.db-journal
+
 # OS files
 .DS_Store
 Thumbs.db
