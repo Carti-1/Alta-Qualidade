@@ -18,6 +18,9 @@ if __name__ == "__main__":
     service = PedidoService(repo)
     controller = PedidoController(service)
 
+    pedido1 = Pedido(cliente="Cliente B", desconto= DescontoVIP())
+    pedido1.valor_original = 200.0
+
     pedido2 = Pedido(cliente="Cliente B", desconto= DescontoVIP())
     pedido2.valor_original = 200.0
 
