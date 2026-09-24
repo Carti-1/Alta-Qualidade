@@ -11,6 +11,6 @@ class PedidoService:
 
     def processar_pedidos(self):
         pedidos = self.repository.listar_pedidos()
-        for pedido in self.pedidos:
+        for pedido in pedidos:
             print(f"Cliente: {pedido.cliente}")
             print(f"Valor final: {pedido.valor_final(pedido.valor_original)}")
