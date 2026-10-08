@@ -1,5 +1,5 @@
 from pathlib import Path
-import sys
+import sys  
 
 if __package__ in (None, ""):
     root = Path(__file__).resolve().parent.parent
@@ -18,14 +18,14 @@ if __name__ == "__main__":
     service = PedidoService(repo)
     controller = PedidoController(service)
 
-    pedido1 = Pedido(cliente="Cliente B", desconto= DescontoVIP())
-    pedido1.valor_original = 200.0
+    pedido1 = Pedido("Cliente 1", DescontoVIP())
+    pedido1.valor_original = 100.0
 
-    pedido2 = Pedido(cliente="Cliente B", desconto= DescontoVIP())
-    pedido2.valor_original = 200.0
+    pedido2 = Pedido("Cliente 2", DescontoVIP())
+    pedido2.valor_original = 100.0
 
-    pedido3 = Pedido(cliente="Cliente C", desconto= DescontoPremium())
-    pedido3.valor_original = 300.0
+    pedido3 = Pedido("Cliente 3", DescontoPremium())
+    pedido3.valor_original = 100.0
 
     controller.adicionar_pedido(pedido1)
     controller.adicionar_pedido(pedido2)

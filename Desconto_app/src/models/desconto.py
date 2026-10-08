@@ -1,7 +1,7 @@
-from abc import ABC, abstractmethod
+import abc
 
-class IDesconto(ABC):
-    @abstractmethod
+class IDesconto(abc.ABC):
+    @abc.abstractmethod
     def calcular(self, valor: float) -> float:
         pass
 
