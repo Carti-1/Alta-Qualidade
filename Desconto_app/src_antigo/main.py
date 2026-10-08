@@ -5,12 +5,12 @@ if __package__ in (None, ""):
     root = Path(__file__).resolve().parent.parent
     sys.path.insert(0, str(root))
 
-from src.repositories.pedido_repository import PedidoRepository
-from src.controllers.pedido_controller import PedidoController
-from src.services.pedido_service import PedidoService
-from src.database.connection import DatabaseConnection
-from src.models.desconto import DescontoVIP, DescontoNormal, DescontoPremium
-from src.models.pedido import Pedido
+from src_antigo.repositories.pedido_repository import PedidoRepository
+from src_antigo.controllers.pedido_controller import PedidoController
+from src_antigo.services.pedido_service import PedidoService
+from src_antigo.database.connection import DatabaseConnection
+from src_antigo.models.desconto import DescontoVIP, DescontoNormal, DescontoPremium
+from src_antigo.models.pedido import Pedido
 
 if __name__ == "__main__":
     database = DatabaseConnection()
